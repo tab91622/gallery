@@ -34,9 +34,9 @@ function goDisplay () {
   })
 }
 
-// let timer = null
+let timer = null
 
-// clearInterval(timer)
-// timer = setInterval(() => {
-//   goDisplay();
-// }, 3000)
+clearInterval(timer)
+timer = setInterval(() => {
+  goDisplay();
+}, 3000)
