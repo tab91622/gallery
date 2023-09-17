@@ -1,5 +1,5 @@
 const myCarouselWrapper = document.getElementsByClassName('my-carousel-wrapper')[0]
-const bgImg = document.getElementsByClassName('bg-img')[0]
+const bgImgs = Array.from(document.getElementsByClassName('bg-img'))
 
 const items = Array.from(myCarouselWrapper.getElementsByClassName('my-carousel-item'))
 
@@ -22,8 +22,14 @@ function goDisplay () {
     item.style.transition = 'all .8s ease'
     if (i === (current + 1)) {
       item.classList.add('active')
-      const img = item.children[0]
-      bgImg.src = img.getAttribute('src')
+
+      bgImgs.forEach((img, i) => {
+        img.style.display = 'none'
+    
+        if (i === (current + 1)) {
+          img.style.display = 'block'
+        }
+      })
     }
   })
 }
