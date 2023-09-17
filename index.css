@@ -1,0 +1,181 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100%;
+  position: relative;
+}
+
+/* 隐藏滚动条 */
+body::-webkit-scrollbar {
+  width: 0; /* 隐藏垂直滚动条（仅适用于WebKit浏览器） */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#nav {
+  background-color: #3789f366;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin: 50px 0 100px;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: blur(5px);
+  /* 调整模糊程度，单位可以是像素(px)或其他长度单位 */
+  -webkit-filter: blur(5px);
+  /* 针对一些WebKit浏览器的前缀版本添加相同的样式 */
+}
+
+.my-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-carousel-wrapper {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.my-carousel-item {
+  flex: 1 0 33.3%;
+  height: 40vh;
+  transform-origin: center center;
+  transition: all 1.2s ease;
+  border-radius: 2px;
+  /* filter: blur(2px); */
+  /* -webkit-filter: blur(2px); */
+  transform: scale(1);
+  position: relative;
+  -webkit-box-reflect: none;
+}
+
+.my-carousel-item.active {
+  z-index: 100;
+  filter: blur(0);
+  transform: scale(2);
+  box-shadow: 0 0 15px 5px rgba(125, 125, 125, .3);
+  /* -webkit-box-reflect: below 0px linear-gradient(180deg, rgba(0, 0, 0, 0), transparent, rgba(0, 0, 0, .5)); */
+  -webkit-box-reflect: below 0px linear-gradient(180deg, transparent, rgba(0, 0, 0, .5));
+}
+
+.my-carousel-item img {
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-card {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 30px;
+}
+
+.article-card .article-card-img {
+  flex: 0 0 20vw;
+  height: 500px;
+}
+
+.article-card .article-card-text p {
+  flex: 1 1 auto;
+  color: #666;
+  line-height: 24px;
+  font-size: 16px;
+  white-space: pre-line;
+  word-break: break-all;
+  font-family: '微软雅黑';
+}
+
+.article-card.w-40 .article-card-img {
+  flex: 0 0 40vw;
+}
+
+.article-card-center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  min-height: 600px;
+}
+
+.article-card-center .article-card-img {
+  width: 60%;
+  height: 600px;
+}
+
+.article-card-center .article-card-text p {
+  width: 100%;
+  color: #666;
+  line-height: 24px;
+  font-size: 16px;
+  white-space: pre-line;
+  word-break: break-all;
+  font-family: '微软雅黑';
+}
+
+.article-card-center.w-100 .article-card-img,
+.article-card-center.w-100 .article-card-text
+{
+  width: 100%;
+}
+
+.text-center {
+  transform-style: preserve-3d;
+}
+
+.card-area {
+  height: 300px;
+  transition: all .3s ease;
+}
+
+.card-area:hover {
+  transform: scale(1.05);
+}
+
+.card-area .card-area-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 5px rgba(197, 197, 197, .3);
+}
+
+.card-area .card-area-img img {
+  border-radius: 4px;
+}
