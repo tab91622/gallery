@@ -3,6 +3,7 @@
   --font-size-small: 14px;
   --font-size-normal: 16px;
   --font-size-large: 18px;
+  --border-radius: 4px;
 }
 
 html,
@@ -47,12 +48,23 @@ img {
   background-color: #4a94f4;
 }
 
-#wrapper {
+.container {
+  margin-top: -100px;
+  padding: 30px 30px!important;
+  box-shadow: 0 0 10px 5px rgba(127, 127, 127, .15);
+  background-color: #FFF;
+  border-radius: var(--border-radius);
+}
+
+.bg-img-wrapper {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100vw;
   height: 100vh;
-  position: relative;
-  margin: 50px 0 100px;
-  overflow: hidden;
 }
 
 .bg-img {
@@ -63,10 +75,18 @@ img {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  filter: blur(5px);
+  filter: blur(2px);
   /* 调整模糊程度，单位可以是像素(px)或其他长度单位 */
-  -webkit-filter: blur(5px);
+  -webkit-filter: blur(2px);
   /* 针对一些WebKit浏览器的前缀版本添加相同的样式 */
+}
+
+#wrapper {
+  width: 100vw;
+  height: 88vh;
+  position: relative;
+  margin: 50px 0 100px;
+  overflow: hidden;
 }
 
 .my-carousel {
@@ -108,7 +128,7 @@ img {
 .my-carousel-item.active {
   z-index: 100;
   filter: blur(0);
-  transform: scale(2);
+  transform: scale(1.5);
   box-shadow: 0 0 15px 5px rgba(125, 125, 125, .3);
   -webkit-box-reflect: below 0px linear-gradient(180deg, transparent, rgba(0, 0, 0, .5));
 }
